@@ -90,6 +90,7 @@ async def batch_geocode(
         )
     results = []
     csv_reader = csv.DictReader(codecs.iterdecode(file.file, "utf-8"))
+    # TODO: fix this type error (even though code runs)
     if "address" not in csv_reader.fieldnames:
         raise HTTPException(status_code=404, detail="Column `address` not found.")
     async with ArcGIS(
