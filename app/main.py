@@ -3,7 +3,7 @@ from fastapi.responses import HTMLResponse
 import markdown
 from fastapi import status
 
-from .routers import geocoding
+from .routers import geocoding, pct_backend
 
 # TODO: add custom parameters
 # TODO: add subfolders with routers
@@ -16,6 +16,7 @@ app = FastAPI(
 )
 
 app.include_router(geocoding.api)
+app.include_router(pct_backend.api)
 
 
 @app.get(
