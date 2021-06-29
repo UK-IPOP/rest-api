@@ -1,8 +1,6 @@
 # REST API
 
-<img alt="Python" src="https://img.shields.io/badge/python-blue.svg?style=for-the-badge&logo=python&logoColor=yellow"/>
-<img alt="Bootstrap" src="https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white"/>
-<img alt="FastAPI" src="https://img.shields.io/badge/fastapi-teal.svg?style=for-the-badge&logo=fastapi&logoColor=white"/>
+<img alt="Python" src="https://img.shields.io/badge/python-blue.svg?style=for-the-badge&logo=python&logoColor=yellow"/> <img alt="Bootstrap" src="https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white"/> <img alt="FastAPI" src="https://img.shields.io/badge/fastapi-teal.svg?style=for-the-badge&logo=fastapi&logoColor=white"/>
 
 This project is for a REST-API service that handles various data workloads and tools for the
 University of Kentucky's Institute for Pharmaceutical Outcomes and Policy (IPOP) researchers.
