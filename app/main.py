@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-import markdown
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from .routers import geocoding, pct_backend
 
@@ -30,12 +30,15 @@ app.add_middleware(
 app.include_router(geocoding.api)
 app.include_router(pct_backend.api)
 
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
 
 @app.get(
     path="/",
     tags=["home"],
     summary="Homepage request",
     response_description="Welcome page via markdown.",
+    include_in_schema=False,
 )
 async def home() -> HTMLResponse:
     """
