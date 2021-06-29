@@ -36,6 +36,7 @@ class LevelEnum(enum.Enum):
     "/update",
     summary="Backend for PCT-Decision Tool.",
     response_description="Returns simple message stating query accepted.",
+    include_in_schema=False,
 )
 async def home(track: TrackEnum, level: LevelEnum) -> dict[str, dict[str, str]]:
     """
