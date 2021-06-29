@@ -5,8 +5,6 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from .routers import geocoding, pct_backend
 
-# TODO: add custom parameters
-# TODO: add subfolders with routers
 
 app = FastAPI(
     title="UK IPOP",
@@ -45,6 +43,5 @@ async def home() -> HTMLResponse:
 
     I think this is **very** cool!
     """
-    with open("./pages/homepage.md") as f:
-        converted = markdown.markdown(f.read())
-        return HTMLResponse(converted)
+    with open("./pages/index.html") as f:
+        return HTMLResponse(f.read())
