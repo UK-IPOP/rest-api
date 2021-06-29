@@ -33,6 +33,11 @@ To get the project running locally follow these steps:
 3. `poetry install`
 4. `make run`
 
+> \*\*\*DISCLAIMER\*\*\*:
+> You may experience some errors regarding the `/pct_backend` route requiring a GitHub Auth Token. This is a security feature as we do not want those routes being externally manipulated at this time. Feel free to create a `GITHUB_TOKEN` environment
+> variable and set it to anything and the code should then run but you will not be
+> able to manipulate that route.
+
 You can then see the server running on `http://127.0.0.1:8000`
 
 ## License
