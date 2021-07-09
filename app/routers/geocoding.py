@@ -47,9 +47,7 @@ async def geocode(address: str) -> GeoData:
     the full geocoded address (which can be compared to the original),
     altitude, latitude, longitude, and a confidence score.
     """
-    async with ArcGIS(
-        adapter_factory=AioHTTPAdapter,
-    ) as geolocator:
+    async with ArcGIS(adapter_factory=AioHTTPAdapter, timeout=10) as geolocator:
         location = await geolocator.geocode(address)
         data_dict = {
             "address": location.address,
