@@ -1,7 +1,9 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, status
 from fastapi.responses import HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from starlette.responses import JSONResponse
+from faker import Faker
 
 from .routers import geocoding, pct_backend
 
@@ -48,3 +50,18 @@ async def home() -> HTMLResponse:
     """
     with open("./pages/index.html") as f:
         return HTMLResponse(f.read())
+
+
+# TODO: can add more complex functionality
+# like filter for gender of name
+# like prefixes and suffixes
+# see: https://faker.readthedocs.io/en/master/providers/faker.providers.person.html
+@app.get(
+    path="/fake-name",
+    summary="Get a fake name",
+    response_description="A fake name",
+)
+async def fake_name() -> JSONResponse:
+    """Get a fake name."""
+    faker = Faker()
+    return JSONResponse({"name": faker.name()}, status_code=status.HTTP_200_OK)
